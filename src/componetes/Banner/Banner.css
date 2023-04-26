@@ -1,0 +1,13 @@
+:root{
+    --cor-de-fundo:#6278F7;
+    --cor-de-form: #F6F6F6;
+}
+
+.banner{
+    background-color: var(--cor-de-fundo);
+    text-align: center;
+}
+
+.banner img{
+    width: 100%;
+}
