@@ -50,7 +50,7 @@ function App() {
 
   const aoNovoColaboradorAdicionado = (colaborador)=>{
     console.log(colaborador)
-    setColaboradores([...colaborador,colaborador])
+    setColaboradores([...colaboradores,colaborador])
 
   }
 
@@ -59,7 +59,14 @@ function App() {
     <div className="App">
       <Banner/>    
       <Formulario times={times.map(time=>time.nome)} aoColaboradorCadastrado={colaborador=>aoNovoColaboradorAdicionado(colaborador)}/>      
-      {times.map(time=> <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria}/>)}
+
+      {times.map(time=> <Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSecundaria}
+        colaboradores={colaboradores.filter(colaborador=> colaborador.time === time.nome)}
+        />)}
     </div>
     /*acima foi criado a função map do javascript, onde peguei o array times e com a função '.map'
       atribui como ele deveria se comportar. Nesse caso será devolvido atraves do '.map' o nome do time
